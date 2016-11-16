@@ -14,7 +14,12 @@ defmodule Secretary.Mixfile do
   #
   # Type "mix help compile.app" for more information
   def application do
-    [applications: [:logger, :cowboy, :plug],
+    [applications: [
+        :logger,
+        :cowboy,
+        :plug,
+        :hackney
+      ],
      mod: {Secretary, []}]
   end
 
@@ -31,7 +36,8 @@ defmodule Secretary.Mixfile do
     [
       {:cowboy, "~> 1.0.0"},
       {:plug, "~> 1.2.2"},
-      {:poison, "~> 3.0.0"}
+      {:poison, "~> 3.0.0"},
+      {:hackney, "~> 1.6.3"}
     ]
   end
 end
