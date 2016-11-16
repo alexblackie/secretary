@@ -12,6 +12,7 @@ defmodule Secretary do
     children = [
       # Starts a worker by calling: Secretary.Worker.start_link(arg1, arg2, arg3)
       # worker(Secretary.Worker, [arg1, arg2, arg3]),
+      worker(Secretary.Ingestor, [])
       Plug.Adapters.Cowboy.child_spec(:http, Secretary.Router, [port: @port])
     ]
 

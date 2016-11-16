@@ -5,7 +5,8 @@ defmodule Secretary.Router do
   plug :dispatch
 
   post "/" do
-    # TODO implement
+    {:ok, body, _} = Plug.Conn.read_body(conn)
+    Secretary.Ingestor.feed(body)
     send_resp(conn, 200, "")
   end
 
