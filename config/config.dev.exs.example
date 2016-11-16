@@ -1,0 +1,7 @@
+use Mix.Config
+
+# This is a Github OAuth token that should be granted read/write access to the
+# repository that you wish to enable Secretary for. For development, it is fine
+# to use a Personal Access Token for your personal account to test, just be
+# cautious not to commit it or accidentally share it.
+config :secretary, github_token: "abc-123"
