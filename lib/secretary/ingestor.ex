@@ -1,8 +1,8 @@
 defmodule Secretary.Ingestor do
   use GenServer
 
-  def start_link(args) do
-    {:ok, _} = GenServer.start_link(__MODULE__, args, name: {:global, __MODULE__})
+  def start_link do
+    {:ok, _} = GenServer.start_link(__MODULE__, [], name: {:global, __MODULE__})
   end
 
   def feed(payload) do
