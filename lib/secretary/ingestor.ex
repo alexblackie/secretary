@@ -13,7 +13,7 @@ defmodule Secretary.Ingestor do
   processed. Shorthand for a GenServer cast to this globally-named server.
   """
   def feed(payload) do
-    GenServer.cast(__MODULE__, {:feed, payload})
+    GenServer.cast({:global, __MODULE__}, {:feed, payload})
   end
 
   # --- gen_server api ---
