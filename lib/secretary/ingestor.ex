@@ -41,12 +41,13 @@ defmodule Secretary.Ingestor do
 
     # Generate list of labels we should add
     list_of_labels = Secretary.BranchParser.labels(pull_ref)
+    {:ok, json_labels} = Poison.encode(list_of_labels)
 
     # Make an API request to Github
     {:ok, 200, _, _} = :hackney.post(
       api_url("/repos/#{repo}/issues/#{pull_number}/labels"),
       [{"Authorization", "token #{github_token}"}],
-      list_of_labels,
+      json_labels,
       []
     )
 
