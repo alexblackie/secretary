@@ -38,7 +38,8 @@ defmodule Secretary.Mixfile do
       {:cowboy, "~> 1.0.0"},
       {:plug, "~> 1.2.2"},
       {:poison, "~> 3.0.0"},
-      {:hackney, "~> 1.6.3"}
+      {:hackney, "~> 1.6.3"},
+      {:distillery, "~> 0.10"}
     ]
   end
 end

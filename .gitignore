@@ -16,6 +16,9 @@ erl_crash.dump
 # Also ignore archive artifacts (built via "mix archive.build").
 *.ez
 
+# Ignore generated releases
+/rel/secretary
+
 # Ignore development and production configuration.
 # These should be allowed customization.
 /config/config.dev.exs
