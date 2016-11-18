@@ -7,6 +7,9 @@ defmodule Secretary.Mixfile do
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,
+     preferred_cli_env: [
+       vcr: :test, "vcr.delete": :test, "vcr.check": :test, "vcr.show": :test
+     ],
      deps: deps()]
   end
 
@@ -39,7 +42,8 @@ defmodule Secretary.Mixfile do
       {:plug, "~> 1.2.2"},
       {:poison, "~> 3.0.0"},
       {:hackney, "~> 1.6.3"},
-      {:distillery, "~> 0.10"}
+      {:distillery, "~> 0.10"},
+      {:exvcr, "~> 0.8.4", only: :test}
     ]
   end
 end

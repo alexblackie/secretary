@@ -39,28 +39,10 @@ defmodule Secretary.Ingestor do
     repo = payload["pull_request"]["head"]["repo"]["full_name"]
     pull_number = payload["pull_request"]["number"]
 
-    # Generate list of labels we should add
-    list_of_labels = Secretary.BranchParser.labels(pull_ref)
-    {:ok, json_labels} = Poison.encode(list_of_labels)
-
     # Make an API request to Github
-    {:ok, 200, _, _} = :hackney.post(
-      api_url("/repos/#{repo}/issues/#{pull_number}/labels"),
-      [{"Authorization", "token #{github_token}"}],
-      json_labels,
-      []
-    )
+    Secretary.BranchParser.labels(pull_ref)
+    |> Secretary.Github.label_issue(repo, pull_number)
 
     {:noreply, state}
-  end
-
-  # --- private ---
-
-  defp api_url(path) do
-    "#{Application.get_env(:secretary, :github_api)}#{path}"
-  end
-
-  defp github_token do
-    Application.get_env(:secretary, :github_token)
   end
 end

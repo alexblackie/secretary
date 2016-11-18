@@ -1,0 +1,44 @@
+[
+  {
+    "request": {
+      "body": "[\"bug\"]",
+      "headers": {
+        "Authorization": "token <GITHUB_TOKEN>"
+      },
+      "method": "post",
+      "options": [],
+      "request_body": "",
+      "url": "https://api.github.com/repos/alexblackie/secretary/issues/1/labels"
+    },
+    "response": {
+      "body": "[{\"id\":484033748,\"url\":\"https://api.github.com/repos/alexblackie/secretary/labels/bug\",\"name\":\"bug\",\"color\":\"ee0701\",\"default\":true},{\"id\":484034490,\"url\":\"https://api.github.com/repos/alexblackie/secretary/labels/feature\",\"name\":\"feature\",\"color\":\"fbca04\",\"default\":false}]",
+      "headers": {
+        "Server": "GitHub.com",
+        "Date": "Fri, 18 Nov 2016 15:55:15 GMT",
+        "Content-Type": "application/json; charset=utf-8",
+        "Content-Length": "274",
+        "Status": "200 OK",
+        "X-RateLimit-Limit": "5000",
+        "X-RateLimit-Remaining": "4992",
+        "X-RateLimit-Reset": "1479487873",
+        "Cache-Control": "private, max-age=60, s-maxage=60",
+        "Vary": "Accept, Authorization, Cookie, X-GitHub-OTP",
+        "ETag": "\"4ab83cbad0036fbbb3cf3909f82bf507\"",
+        "X-OAuth-Scopes": "repo",
+        "X-Accepted-OAuth-Scopes": "public_repo, repo",
+        "X-GitHub-Media-Type": "github.v3; format=json",
+        "Access-Control-Expose-Headers": "ETag, Link, X-GitHub-OTP, X-RateLimit-Limit, X-RateLimit-Remaining, X-RateLimit-Reset, X-OAuth-Scopes, X-Accepted-OAuth-Scopes, X-Poll-Interval",
+        "Access-Control-Allow-Origin": "*",
+        "Content-Security-Policy": "default-src 'none'",
+        "Strict-Transport-Security": "max-age=31536000; includeSubdomains; preload",
+        "X-Content-Type-Options": "nosniff",
+        "X-Frame-Options": "deny",
+        "X-XSS-Protection": "1; mode=block",
+        "X-Served-By": "7efb7ae49588ef0269c6a1c1bd3721d9",
+        "X-GitHub-Request-Id": "B842EC12:1CF7:D103A7B:582F2462"
+      },
+      "status_code": 200,
+      "type": "ok"
+    }
+  }
+]
