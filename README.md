@@ -5,6 +5,8 @@ requests in Github were filterable based on that category. This is a small
 webhook--ahem--"microservice" to consume github webhooks and then label newly
 opened PRs with a label that matches their branch category.
 
+![Screenshot of the result](./.preview.png)
+
 ## Development
 
 This is an [Elixir][1] application.
