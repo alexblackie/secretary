@@ -56,12 +56,10 @@ defmodule Secretary.Ingestor do
   # --- private ---
 
   defp api_url(path) do
-    {:ok, host} = Application.get_env(:secretary, :github_api)
-    "#{host}#{path}"
+    "#{Application.get_env(:secretary, :github_api)}#{path}"
   end
 
   defp github_token do
-    {:ok, token} = Application.get_env(:secretary, :github_token)
-    token
+    Application.get_env(:secretary, :github_token)
   end
 end
