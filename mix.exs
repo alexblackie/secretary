@@ -18,7 +18,8 @@ defmodule Secretary.Mixfile do
         :logger,
         :cowboy,
         :plug,
-        :hackney
+        :hackney,
+        :poison
       ],
      mod: {Secretary, []}]
   end
