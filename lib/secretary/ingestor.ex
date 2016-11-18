@@ -36,7 +36,7 @@ defmodule Secretary.Ingestor do
 
     # Some variables to clean things up
     pull_ref = payload["pull_request"]["head"]["ref"]
-    repo = payload["pull_request"]["repo"]["full_name"]
+    repo = payload["pull_request"]["head"]["repo"]["full_name"]
     pull_number = payload["pull_request"]["number"]
 
     # Generate list of labels we should add
