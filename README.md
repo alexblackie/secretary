@@ -1,5 +1,7 @@
 # Secretary
 
+[![Build Status](https://ci.blackieops.com/buildStatus/icon?job=secretary-tests)](https://ci.blackieops.com/job/secretary-tests/)
+
 I like branch categories. What I realised I would also like is if my pull
 requests in Github were filterable based on that category. This is a small
 webhook--ahem--"microservice" to consume github webhooks and then label newly
