@@ -5,3 +5,9 @@ use Mix.Config
 # to use a Personal Access Token for your personal account to test, just be
 # cautious not to commit it or accidentally share it.
 config :secretary, github_token: "abc-123"
+
+# Github supports specifying a "secret" value to use when hashing the contents
+# of the JSON payload. This verifies integrity of the payload, and prevents
+# random people on the internet from hitting the webhook without knowing this
+# value. Set this to a long random string (eg., something from `pwgen`).
+config :secretary, webhook_secret: "some-random-string"

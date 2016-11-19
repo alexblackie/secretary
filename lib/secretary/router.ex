@@ -6,8 +6,14 @@ defmodule Secretary.Router do
 
   post "/" do
     {:ok, body, _} = Plug.Conn.read_body(conn)
-    Secretary.Ingestor.feed(body)
-    send_resp(conn, 200, "")
+    {_, signature} = List.keyfind(conn.req_headers, "x-hub-signature", 0)
+
+    if Secretary.PayloadVerification.verify_webhook(signature, body) do
+      Secretary.Ingestor.feed(body)
+      send_resp(conn, 200, "")
+    else
+      send_resp(conn, 400, "Signatures did not match!")
+    end
   end
 
   match _ do

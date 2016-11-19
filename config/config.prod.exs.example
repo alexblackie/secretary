@@ -5,3 +5,9 @@ use Mix.Config
 # Access Token". It is advised to use a "bot" user specifically for this
 # permission to limit damage from compromise.
 config :secretary, github_token: "abc-123"
+
+# Github supports specifying a "secret" value to use when hashing the contents
+# of the JSON payload. This verifies integrity of the payload, and prevents
+# random people on the internet from hitting the webhook without knowing this
+# value. Set this to a long random string (eg., something from `pwgen`).
+config :secretary, webhook_secret: "some-random-string"
