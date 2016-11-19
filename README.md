@@ -62,7 +62,9 @@ permissions so it has permissions to label things.
 
 Then, under "Settings" -> "Webhooks" on your repository, add a new webhook.
 
-* Configure the URL to be wherever you hosted Secretary
+* Configure the URL to be wherever you hosted Secretary.
+* Set a long random string as the secret (and make sure it's configured in
+  `config.prod.exs`).
 * For the events, select "Let me select individual events" and check **only**
   `Pull Request`.
 
