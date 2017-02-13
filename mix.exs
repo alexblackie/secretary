@@ -1,9 +1,11 @@
 defmodule Secretary.Mixfile do
   use Mix.Project
 
+  def version, do: File.read!("VERSION") |> String.trim_trailing
+
   def project do
     [app: :secretary,
-     version: "0.1.0",
+     version: version(),
      elixir: "~> 1.3",
      build_embedded: Mix.env == :prod,
      start_permanent: Mix.env == :prod,

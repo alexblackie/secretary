@@ -1,0 +1,38 @@
+---
+- hosts: all
+  tasks:
+    - name: add group for easier permissions
+      group: name="{{app_user}}"
+
+    - name: add user to run the app as
+      user:
+        name: "{{app_user}}"
+        group: "{{app_user}}"
+        createhome: no
+
+    - name: create app directory
+      file:
+        path: "{{app_path}}"
+        state: directory
+        owner: "{{app_user}}"
+        group: "{{app_user}}"
+
+    - name: upload and extract the release
+      unarchive:
+        src: ../../rel/secretary/releases/{{release_version}}/secretary.tar.gz
+        dest: "{{app_path}}"
+        owner: "{{app_user}}"
+        group: "{{app_user}}"
+        creates: "{{app_path}}/bin/secretary"
+
+    - name: install systemd service to start app
+      template:
+        src: secretary.service.j2
+        dest: /etc/systemd/system/secretary.service
+
+    - name: enable and start the app
+      systemd:
+        daemon_reload: yes
+        unit: secretary.service
+        state: started
+        enabled: yes

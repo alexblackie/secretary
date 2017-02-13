@@ -23,18 +23,32 @@ The app will now be listening on `localhost:4000`.
 
 ## Deployment
 
-This is an Erlang/Elixir application, so deployment should be fairly
-straightforward.
+### Releasing
 
-* Ensure you are compiling on the same OS as the production server.
+Before anything, we need to generate a release tarball.
+
+* Ensure you are compiling on the same OS as the production server (yes, distro matters).
 * Ensure you have configured `config/config.prod.exs` with the right values.
 * Copy `rel/config.exs.example` to `rel/config.exs` and fill in the `cookie`
   value with a random string.
 * Run `MIX_ENV=prod mix release`
-* Upload `rel/secretary/releases/$VERSION/secretary.tar.gz` to a server (where
-  `$VERSION` is the release that is in `mix.exs`).
+
+### Ansible!
+
+Check out the `./deploy` directory in the repo, which contains a
+fully-functioning Ansible playbook for deploying secretary to one or
+more servers. This is what I use to deploy my instances.
+
+### Or Manually
+
+If you haven't yet tried Ansible and aren't willing to change your life, then
+you can also deploy the app manually.
+
+* Upload `rel/secretary/releases/$VERSION/secretary.tar.gz` to a server.
 * On the server, extract the tarball and run `bin/secretary start` to start a
   forked background process.
+* You'll want to configure some sort of reverse-proxy like NGINX to terminate
+  TLS and bind to a "normal" port like 443.
 
 ### Extra: A systemd service
 

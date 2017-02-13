@@ -1,0 +1,7 @@
+---
+release_version: 0.1.1
+app_path: /usr/local/secretary
+app_user: secretary
+app_port: 4000
+ssl_certificate: /etc/pki/tls/certs/secretary.ca-bundle.crt
+ssl_certificate_key: /etc/pki/tls/private/secretary.key

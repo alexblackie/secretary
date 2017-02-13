@@ -1,0 +1,7 @@
+---
+# This is a manifest file that just loads all the playbooks. You may manually
+# run some or all of these yourself, if you desire a custom deployment.
+
+- include: ./playbooks/base.yml
+- include: ./playbooks/app.yml
+- include: ./playbooks/nginx.yml

@@ -1,0 +1,31 @@
+---
+- hosts: all
+  tasks:
+    - name: system dependencies and setup
+      yum:
+        name: "{{item}}"
+        state: present
+      with_items:
+        - ntp
+        - rng-tools
+        - epel-release
+        - firewalld
+
+    - service:
+        name: "{{item}}"
+        state: started
+        enabled: yes
+      with_items:
+        - ntpd
+        - rngd
+        - firewalld
+
+    - firewalld:
+        service: "{{item}}"
+        permanent: true
+        immediate: yes
+        state: enabled
+      with_items:
+        - http
+        - https
+        - ssh

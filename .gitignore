@@ -24,3 +24,9 @@ erl_crash.dump
 /config/config.dev.exs
 /config/config.prod.exs
 /rel/config.exs
+
+# Ignore inventory for Ansible
+/deploy/inventory
+
+# Ignore retry files dropped around by Ansible
+*.retry
