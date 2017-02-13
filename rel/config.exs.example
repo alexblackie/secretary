@@ -15,7 +15,7 @@ use Mix.Releases.Config,
 environment :prod do
   set include_erts: true
   set include_src: false
-  set cookie: :"4z<YTn}@],iH}?JJC:cUkM%Wn8P{jI-DwYi7QSj]7d`![qZL-k%f7]t`v0S[:}h{"
+  set cookie: :"PUT-A-RANDOM-STRING-HERE"
 end
 
 # You may define one or more releases in this file.

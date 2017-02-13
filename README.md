@@ -28,6 +28,8 @@ straightforward.
 
 * Ensure you are compiling on the same OS as the production server.
 * Ensure you have configured `config/config.prod.exs` with the right values.
+* Copy `rel/config.exs.example` to `rel/config.exs` and fill in the `cookie`
+  value with a random string.
 * Run `MIX_ENV=prod mix release`
 * Upload `rel/secretary/releases/$VERSION/secretary.tar.gz` to a server (where
   `$VERSION` is the release that is in `mix.exs`).
