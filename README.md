@@ -21,6 +21,8 @@ $ iex -S mix
 
 The app will now be listening on `localhost:4000`.
 
+[1]: https://elixir-lang.org/
+
 ## Deployment
 
 ### Releasing
